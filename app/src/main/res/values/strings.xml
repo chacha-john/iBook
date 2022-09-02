@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">iBook</string>
+
+    <!--    Search Activity-->
+    <string name="button_search">Search</string>
+
+<!--    book item layout-->
+    <string name="book_title">Book title</string>
+    <string name="description">Description</string>
+    <string name="author">Author</string>
+    <string name="publisher">Publisher</string>
+
+<!--    Response activity-->
+    <string name="error">Umekwama mkuu</string>
 </resources>

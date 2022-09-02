@@ -9,10 +9,11 @@ import retrofit2.http.Query;
 public interface BookAPI {
     @GET("best-sellers/history.json")
     Call<BookReviewsResponse> getClient(
-            @Query("author") String pAuthor,
-            @Query("title") String pTitle,
-            @Query("contributor") String pContributor,
-            @Query("price") String pPrice,
-            @Query("publisher") String pPublisher
+            @Query("api-key") String pApiKey,
+            @Query("author") String pAuthor
+//            @Query("title") String pTitle,
+//            @Query("contributor") String pContributor,
+//            @Query("price") String pPrice,
+//            @Query("publisher") String pPublisher
     );
 }
