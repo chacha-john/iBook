@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -40,8 +41,14 @@ public class ResponseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_response);
         ButterKnife.bind(this);
 
+        Intent intent = getIntent();
+        String mAuthor = intent.getStringExtra("author");
+        String mTitle = intent.getStringExtra("title");
+        String mPublisher = intent.getStringExtra("publisher");
+        String mPrice = intent.getStringExtra("price");
+
         BookAPI client = BookClient.getClient();
-        Call<BookReviewsResponse> call = client.getClient(API_KEY,"Mark");
+        Call<BookReviewsResponse> call = client.getClient(API_KEY,mAuthor,mTitle,mPrice,mPublisher);
         call.enqueue(new Callback<BookReviewsResponse>() {
             @Override
             public void onResponse(Call<BookReviewsResponse> call, Response<BookReviewsResponse> response) {
@@ -49,9 +56,10 @@ public class ResponseActivity extends AppCompatActivity {
                     results = response.body().getResults();
                     mAdapter = new BookListAdapter(ResponseActivity.this, results);
                     mResponseRV.setAdapter(mAdapter);
-                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ResponseActivity.this);
+                    //set whether or not you want the view to be horizontal or vertical
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ResponseActivity.this, LinearLayoutManager.VERTICAL,false);
                     mResponseRV.setLayoutManager(layoutManager);
-//                    mResponseRV.setHasFixedSize(true);
+                    mResponseRV.setHasFixedSize(true);
 
                     showBooks();
                 }
@@ -59,7 +67,7 @@ public class ResponseActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<BookReviewsResponse> call, Throwable t) {
-
+                showUnsuccessfulMessage();
             }
         });
     }

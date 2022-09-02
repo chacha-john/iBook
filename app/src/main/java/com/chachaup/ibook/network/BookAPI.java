@@ -10,10 +10,9 @@ public interface BookAPI {
     @GET("best-sellers/history.json")
     Call<BookReviewsResponse> getClient(
             @Query("api-key") String pApiKey,
-            @Query("author") String pAuthor
-//            @Query("title") String pTitle,
-//            @Query("contributor") String pContributor,
-//            @Query("price") String pPrice,
-//            @Query("publisher") String pPublisher
+            @Query("author") String pAuthor,
+            @Query("title") String pTitle,
+            @Query("price") String pPrice,
+            @Query("publisher") String pPublisher
     );
 }

@@ -3,12 +3,18 @@
 
     <!--    Search Activity-->
     <string name="button_search">Search</string>
+    <string name="search_title">Title of the book</string>
+    <string name="search_author">Author</string>
+    <string name="search_publisher">Publisher</string>
+    <string name="search_description">Description</string>
+    <string name="search_message">Search by whatever information you have</string>
 
 <!--    book item layout-->
     <string name="book_title">Book title</string>
-    <string name="description">Description</string>
+    <string name="price">Price</string>
     <string name="author">Author</string>
     <string name="publisher">Publisher</string>
+    <string name="description">Description</string>
 
 <!--    Response activity-->
     <string name="error">Umekwama mkuu</string>
