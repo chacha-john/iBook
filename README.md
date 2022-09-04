@@ -29,7 +29,7 @@ An android application that provides information about book reviews and The New 
 * Android Studio
 * Java
 * Gradle
-* Fork then clone the git repository [here](https://github.com/chacha-john/iprofile.git)
+* Fork then clone the git repository [here](https://github.com/chacha-john/ibook.git)
 * Run the application on Android Studio locally.
 
 
