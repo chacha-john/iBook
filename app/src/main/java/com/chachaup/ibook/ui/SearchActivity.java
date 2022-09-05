@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -17,10 +18,11 @@ import butterknife.ButterKnife;
 public class SearchActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.buttonSearch)
     Button mSearch;
-    @BindView(R.id.textInputLayoutTitle) TextInputLayout mTitle;
-    @BindView(R.id.textInputLayoutAuthor) TextInputLayout mAuthor;
-    @BindView(R.id.textViewBookPublisher) TextInputLayout mPublisher;
-    @BindView(R.id.textInputLayoutPrice) TextInputLayout mPrice;
+    @BindView(R.id.autoCompleteTextViewTitle) AutoCompleteTextView mTitle;
+    @BindView(R.id.autoCompleteTextViewAuthor) AutoCompleteTextView mAuthor;
+    @BindView(R.id.autoCompleteTextViewPublisher)
+    AutoCompleteTextView mPublisher;
+    @BindView(R.id.autoCompleteTextViewPrice) AutoCompleteTextView mPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +38,10 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         if (v == mSearch){
             Intent intent = new Intent(SearchActivity.this,ResponseActivity.class);
             Toast.makeText(getApplicationContext(),"Populating results...",Toast.LENGTH_SHORT).show();
-            intent.putExtra("title",mTitle.getEditText().getText().toString().trim());
-            intent.putExtra("author", mAuthor.getEditText().getText().toString().trim());
-            intent.putExtra("publisher", mPublisher.getEditText().getText().toString().trim());
-            intent.putExtra("price", mPrice.getEditText().getText().toString().trim());
+            intent.putExtra("title",mTitle.getText().toString().trim());
+            intent.putExtra("author", mAuthor.getText().toString().trim());
+            intent.putExtra("publisher", mPublisher.getText().toString().trim());
+            intent.putExtra("price", mPrice.getText().toString().trim());
             startActivity(intent);
         }
 
