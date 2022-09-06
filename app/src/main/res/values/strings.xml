@@ -8,13 +8,21 @@
     <string name="search_publisher">Publisher</string>
     <string name="search_description">Description</string>
     <string name="search_message">Search by whatever information you have</string>
+<!--    Hints-->
+    <string name="book_title_hint">Book title</string>
+    <string name="price_hint">Price</string>
+    <string name="author_hint">Author</string>
+    <string name="publisher_hint">Publisher</string>
+    <string name="description_hint">Description</string>
 
 <!--    book item layout-->
-    <string name="book_title">Book title</string>
-    <string name="price">Price</string>
-    <string name="author">Author</string>
-    <string name="publisher">Publisher</string>
-    <string name="description">Description</string>
+    <string name="book_title">The book title is not available</string>
+    <string name="price">The price is not available</string>
+    <string name="author">The author information is not available</string>
+    <string name="publisher">The publisher information is not available</string>
+    <string name="description">The book description is not available</string>
+
+<!--    -->
 
 <!--    Response activity-->
     <string name="error">Umekwama mkuu</string>
